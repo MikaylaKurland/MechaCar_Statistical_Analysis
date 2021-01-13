@@ -26,6 +26,7 @@ lot_summary <- df_SuspensionCoils %>% group_by(Manufacturing_Lot) %>% summarize(
 t.test(log10(df_SuspensionCoils$PSI),mu=mean(log10(1500)))
 
 #3.2
-t.test(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot1",mu=mean(log10(1500)))
-t.test(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot2",mu=mean(log10(1500)))
-t.test(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot3",mu=mean(log10(1500)))
+t.test(subset(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot1"),mu=mean(log10(1500)))
+t.test(subset(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot2"),mu=mean(log10(1500)))
+t.test(subset(log10(df_SuspensionCoils$PSI),df_SuspensionCoils$Manufacturing_Lot=="Lot3"),mu=mean(log10(1500)))
+
